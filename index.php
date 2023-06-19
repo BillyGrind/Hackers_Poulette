@@ -52,18 +52,18 @@ If you have ticked all the above boxes, you can add some of the following featur
 			<textarea name="description" id="" cols="30" rows="10" required minlength="2" maxlength="1000"></textarea>
 		</div>
 
-        <!-- capchat -->
-        <!-- refaire id/class et css -->
+        <!-- captcha -->
         <!-- regler message alerte / condition  -->
-        
-        <div class="row">
-        <div class="form-group col-6">
-          <label>Enter Captcha</label>
-          <input type="text" class="form-control" name="captcha" id="captcha">
-        </div>
-        <div class="form-group col-6">
-          <label>Captcha Code</label>
-          <img src="createCaptcha.php" alt="PHP Captcha">
+
+        <div id="form-captcha">
+            <div id="form-captcha-input">
+                <label>Enter Captcha</label>
+                <input type="text" id="form-control" name="captcha" id="captcha">
+            </div>
+            <div id="form-captcha-jpg">
+                <label>Captcha Code</label>
+                <img src="createCaptcha.php" alt="PHP Captcha">
+            </div>
         </div>
 
 
