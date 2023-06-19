@@ -1,7 +1,21 @@
 <?php
 include ("connectDb.php");
-
 ?>
+
+<!-- TO DO 
+
+If you have ticked all the above boxes, you can add some of the following features:
+
+    Client side validation with JavaScript
+    Work on a good and clear user experience (UX)
+    If all required inputs are valid, the script should respond by email to a given address, confirming the reception of the message. (you can use your own address for testing purposes)
+    Discover composer and use it to install a PHP library such as SwiftMailer to send the email or to validate the form with library such as rakit/validation, valitron or symfony/mailer
+    Protect your form against the most common attacks (CSRF, XSS, SQL injection, etc.) ressources: OWASP, OWASP Cheat Sheet XSS, OWASP Cheat Sheet SQL injection
+    Create a dashboard to display the received messages (admin side) which allow to manage the messages status (handled, not handled, response, etc..) (this is a big one I know, you probably won't have time to do it all, but it's a good exercise to learn how to manage a database and a dashboard)
+
+-->
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +51,22 @@ include ("connectDb.php");
 			<label for="description">Description</label>
 			<textarea name="description" id="" cols="30" rows="10" required minlength="2" maxlength="1000"></textarea>
 		</div>
+
+        <!-- capchat -->
+        <!-- refaire id/class et css -->
+        <!-- regler message alerte / condition  -->
+        
+        <div class="row">
+        <div class="form-group col-6">
+          <label>Enter Captcha</label>
+          <input type="text" class="form-control" name="captcha" id="captcha">
+        </div>
+        <div class="form-group col-6">
+          <label>Captcha Code</label>
+          <img src="createCaptcha.php" alt="PHP Captcha">
+        </div>
+
+
 		<button type="submit" name="submit" id="form-submit">Envoyer</button>
 	</form>
     </div>
