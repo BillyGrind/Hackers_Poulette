@@ -1,5 +1,28 @@
 <?php
+try {
+    
+    include("connectDb.php");
+    require("sanitizeFunction.php");
 
+    if (isset($_POST['submit'])) {
+
+        $lastName = sanitizeString($_POST['lastName']);
+        $firstName = $_POST['firstName'];
+        $mail = $_POST['mail'];
+        $file = $_POST['file'];
+        $description = $_POST['description'];
+
+            $sql = "INSERT INTO contact_form (last_name, first_name, email,file,description) VALUES (?,?,?,?,?)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$lastName,$firstName,$mail,$file,$description]);
+
+            echo "Data send with succes";
+        } else {
+            echo "Veuillez entrer des données valides pour les champs.";
+        }
+} catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
 ?>
 
 
