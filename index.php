@@ -1,33 +1,7 @@
 <?php
-try {
-    
-    include("connectDb.php");
-    require("sanitizeFunction.php");
+include ("connectDb.php");
 
-    if (isset($_POST['submit'])) {
-
-        $lastName = sanitizeString($_POST['lastName']);
-        $firstName = $_POST['firstName'];
-        $mail = $_POST['mail'];
-        $file = $_POST['file'];
-        $description = $_POST['description'];
-
-            $sql = "INSERT INTO contact_form (last_name, first_name, email,file,description) VALUES (?,?,?,?,?)";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute([$lastName,$firstName,$mail,$file,$description]);
-
-            echo "Data send with succes";
-        } else {
-            echo "Veuillez entrer des données valides pour les champs.";
-        }
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
 ?>
-
-
-<!-- The company Hackers Poulette ™ sells Raspberry Pi accessory kits to build your own. They want to allow their users to contact their support team. Your mission is to create a fully-functioning online "contact support" form, in PHP. It must display a contact form and process the received answer (sanitize, validate, answer the user). -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,32 +9,36 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Support</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-	<h1>Contact Support</h1>
-	<form action="" method="post">
-		<div>
+    <div id="form-container">
+    <h1>Contact Support</h1>
+    <form action="" method="post">
+		<div id="form-lastname">
 			<label for="lastName">Your Last Name</label>
-			<input type="text" name="lastName" value="" required minlength="2" maxlength="255">
+			<input type="text" name="lastName" value="" required minlength="2" maxlength="255" class="form_field">
 		</div>
-        <div>
+        <div id="form-firstname">
 			<label for="firstName">Your First Name</label>
 			<input type="text" name="firstName" value="" required minlength="2" maxlength="255">
 		</div>
 
-		<div>
+		<div id="mail">
 			<label for="mail">Your mail </label>
 			<input type="mail" name="mail" value="" required minlength="2" maxlength="255">
 		</div>
-		<div>
+		<div id="form-file">
 			<label for="file">File</label>
 			<input type="file" name="file" value="" accept=".jpg, .png, .gif" size="2097152">
 		</div>
-		<div>
+		<div id="form-description">
 			<label for="description">Description</label>
 			<textarea name="description" id="" cols="30" rows="10" required minlength="2" maxlength="1000"></textarea>
 		</div>
-		<button type="submit" name="submit">Envoyer</button>
+		<button type="submit" name="submit" id="form-submit">Envoyer</button>
 	</form>
+    </div>
 </body>
 </html>

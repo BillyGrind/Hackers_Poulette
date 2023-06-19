@@ -1,0 +1,26 @@
+//Colors
+$darkPurple : #1F0322;
+$sandyBrown : #FFB17A;
+$emerald : #44CF6C ;
+$turkeyRed : #A40606 ;
+$felgrau : #3F4B3B ;
+
+body{
+    background-color: #1F0322;
+    color: $felgrau;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 100vh;
+    margin: 0;
+}
+
+#form-container{
+    background-color: #FFB17A;
+    border-radius: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 80px;
+}
