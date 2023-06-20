@@ -27,7 +27,7 @@ try {
         $description = sanitizeString($_POST['description']);
 
         $captcha = $_POST["captcha"];
-        $captchaUser = filter_var($_POST["captcha"], FILTER_SANITIZE_STRING);
+        $captchaUser = sanitizeString($_POST["captcha"]);
         
         if (empty($captcha)) {
             $captchaError = array(
