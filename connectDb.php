@@ -23,8 +23,14 @@ try {
         $lastName = sanitizeString($_POST['lastName']);
         $firstName = sanitizeString($_POST['firstName']);
         $mail = sanitizeEmail($_POST['mail']);
-        $file = sanitizeString($_POST['file']);
         $description = sanitizeString($_POST['description']);
+        //file
+        $file = $_FILES['file'];
+        $fileName = $file['name'];
+        $fileTmpName = $file['tmp_name'];
+        $destination = './src/' . $fileName;
+        move_uploaded_file($fileTmpName, $destination);
+
 
         $captcha = $_POST["captcha"];
         $captchaUser = sanitizeString($_POST["captcha"]);
@@ -42,9 +48,9 @@ try {
 
             $sql = "INSERT INTO contact_form (last_name, first_name, email, file, description) VALUES (?,?,?,?,?)";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute([$lastName, $firstName, $mail, $file, $description]);
+            $stmt->execute([$lastName, $firstName, $mail, $destination, $description]);
             
-            include("alertMessage.php");
+            // include("alertMessage.php");
         } else {
             echo "Veuillez entrer des données valides pour les champs.";
         }

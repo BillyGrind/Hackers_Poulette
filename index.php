@@ -29,7 +29,7 @@ If you have ticked all the above boxes, you can add some of the following featur
 <body>
     <div id="form-container">
     <h1>Contact Support</h1>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
 		<div id="form-lastname">
 			<label for="lastName">Your Last Name</label>
 			<input type="text" name="lastName" value="" required minlength="2" maxlength="255" class="form_field">
@@ -45,7 +45,7 @@ If you have ticked all the above boxes, you can add some of the following featur
 		</div>
 		<div id="form-file">
 			<label for="file">File</label>
-			<input type="file" name="file" value="" accept=".jpg, .png, .gif" size="2097152">
+			<input type="file" name="file" value="" accept=".jpg, .png, .gif" size="2097152" >
 		</div>
 		<div id="form-description">
 			<label for="description">Description</label>
