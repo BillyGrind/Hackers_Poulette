@@ -2,10 +2,14 @@
 
 session_start();
 
-require('userPwd.php');
-$pdo = new PDO('mysql:host=localhost;dbname=id20944195_papaschultz;charset=utf8', $user,$pwd);
+// require('usersPwd.php');
 
 try {
+
+    //host webhost
+    // $pdo = new PDO('mysql:host=localhost;dbname=id20944195_hackers_poulette;charset=utf8', $user,$pwd);
+    //host local
+    $pdo = new PDO('mysql:host=localhost;dbname=hackers_poulette;charset=utf8','root','');
 
     function sanitizeString($data) {
         $data = trim($data);
