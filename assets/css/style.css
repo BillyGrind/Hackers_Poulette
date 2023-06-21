@@ -1,0 +1,19 @@
+body {
+  background-color: #1F0322;
+  color: #3F4B3B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#form-container {
+  background-color: #FFB17A;
+  border-radius: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 80px;
+}/*# sourceMappingURL=style.css.map */
