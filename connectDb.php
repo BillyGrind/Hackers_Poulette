@@ -2,7 +2,8 @@
 
 session_start();
 
-$pdo = new PDO('mysql:host=localhost;dbname=hackers_poulette;charset=utf8', 'root', '');
+require('userPwd.php');
+$pdo = new PDO('mysql:host=localhost;dbname=id20944195_papaschultz;charset=utf8', $user,$pwd);
 
 try {
 
