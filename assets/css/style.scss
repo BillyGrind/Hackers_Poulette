@@ -40,6 +40,10 @@ input {
     width: 100%;
     margin-bottom: 10px;
   }
+#form-file input{
+    background-color: $felgrau;
+}
+
 
 #form-captcha-jpg , #form-description{
     display: flex;

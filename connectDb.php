@@ -2,14 +2,14 @@
 
 session_start();
 
-// require('usersPwd.php');
+require('usersPwd.php');
 
 try {
 
     //host webhost
-    // $pdo = new PDO('mysql:host=localhost;dbname=id20944195_hackers_poulette;charset=utf8', $user,$pwd);
+    $pdo = new PDO('mysql:host=localhost;dbname=id20944195_hackers_poulette;charset=utf8', $user,$pwd);
     //host local
-    $pdo = new PDO('mysql:host=localhost;dbname=hackers_poulette;charset=utf8','root','');
+    // $pdo = new PDO('mysql:host=localhost;dbname=hackers_poulette;charset=utf8','root','');
 
     function sanitizeString($data) {
         $data = trim($data);
@@ -57,7 +57,7 @@ try {
             
             // include("alertMessage.php");
         } else {
-            echo "Veuillez entrer des données valides pour les champs.";
+            // echo '<script>alert("Veuillez entrer des données valides pour les champs.")</script>';
         }
     } else {
         $captchaError = array(
