@@ -3,25 +3,27 @@
 session_start();
 
 require('usersPwd.php');
+require('sendMail.php');
+require('sanitizeFunction.php');
 
 try {
 
     //host webhost
-    $pdo = new PDO('mysql:host=localhost;dbname=id20944195_hackers_poulette;charset=utf8', $user,$pwd);
+    // $pdo = new PDO('mysql:host=localhost;dbname=id20944195_hackers_poulette;charset=utf8', $user,$pwd);
     //host local
-    // $pdo = new PDO('mysql:host=localhost;dbname=hackers_poulette;charset=utf8','root','');
+    $pdo = new PDO('mysql:host=localhost;dbname=hackers_poulette;charset=utf8','root','');
 
-    function sanitizeString($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
+    // function sanitizeString($data) {
+    //     $data = trim($data);
+    //     $data = stripslashes($data);
+    //     $data = htmlspecialchars($data);
+    //     return $data;
+    // }
 
-    function sanitizeEmail($email) {
-        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-        return $email;
-    }
+    // function sanitizeEmail($email) {
+    //     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    //     return $email;
+    // }
 
     if (isset($_POST['submit'])) {
 
@@ -54,10 +56,15 @@ try {
             $sql = "INSERT INTO contact_form (last_name, first_name, email, file, description) VALUES (?,?,?,?,?)";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([$lastName, $firstName, $mail, $destination, $description]);
-            
+
+            sendEmail($firstName,$mail);
+
+
+            // echo '<script>alert(" Ok chef tout a bien été envoyé !")</script>';
+            header('index.php');
             // include("alertMessage.php");
         } else {
-            // echo '<script>alert("Veuillez entrer des données valides pour les champs.")</script>';
+            echo '<script>alert("Veuillez entrer des données valides pour les champs.")</script>';
         }
     } else {
         $captchaError = array(

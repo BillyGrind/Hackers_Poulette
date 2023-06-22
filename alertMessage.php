@@ -2,14 +2,6 @@
 
 $errors = array();
 
-        if (strlen($lastName) < 2 || strlen($lastName) > 255) {
-            $errors[] = "Le nom doit contenir entre 2 et 255 caractères.";
-        }
-
-        if (strlen($firstName) < 2 || strlen($firstName) > 255) {
-            $errors[] = "Le prénom doit contenir entre 2 et 255 caractères.";
-        }
-
         if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
             $errors[] = "Veuillez saisir une adresse email valide.";
         }
