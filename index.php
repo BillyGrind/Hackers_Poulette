@@ -30,47 +30,51 @@ If you have ticked all the above boxes, you can add some of the following featur
 </head>
 <body>
     <div id="form-container">
-    <h1>Contact Support</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-		<div id="form-lastname">
-			<label for="lastName">Your Last Name</label>
-			<input type="text" name="lastName" value="" required minlength="2" maxlength="255" class="form_field">
-		</div>
-        <div id="form-firstname">
-			<label for="firstName">Your First Name</label>
-			<input type="text" name="firstName" value="" required minlength="2" maxlength="255">
-		</div>
+        <h2>Contact Support</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                <div id="form-lastname">
+                    <!-- <label for="lastName">Your Last Name</label> -->
+                    <input type="text" name="lastName" value="" minlength="2" maxlength="255" class="form_field" placeholder="Last Name" required >
+                </div>
+                <div id="form-firstname">
+                    <!-- <label for="firstName">Your First Name</label> -->
+                    <input type="text" name="firstName" value=""  minlength="2" maxlength="255" 
+                    placeholder="First Name"
+                    required >
+                </div>
 
-		<div id="mail">
-			<label for="mail">Your mail </label>
-			<input type="mail" name="mail" value="" required minlength="2" maxlength="255">
-		</div>
-		<div id="form-file">
-			<label for="file">File</label>
-			<input type="file" name="file" value="" accept=".jpg, .png, .gif" size="2097152" >
-		</div>
-		<div id="form-description">
-			<label for="description">Description</label>
-			<textarea name="description" id="" cols="30" rows="10" required minlength="2" maxlength="1000"></textarea>
-		</div>
+                <div id="mail">
+                    <!-- <label for="mail">Your mail </label> -->
+                    <input type="mail" name="mail" value="" minlength="2" maxlength="255" placeholder="Your Mail" required >
+                </div>
+                <div id="form-file">
+                    <!-- <label for="file">File</label> -->
+                    <input type="file" name="file" value="" accept=".jpg, .png, .gif" size="2097152">
+                </div>
+                <div id="form-description">
+                    <!-- <label for="description">Description</label> -->
+                    <textarea name="description" id="" cols="30" rows="10"  minlength="2" maxlength="1000"
+                    placeholder="Add Some Description" required >Write Your Description
+                    </textarea>
+                </div>
 
-        <!-- captcha -->
-        <!-- regler message alerte / condition  -->
+                <!-- captcha -->
+                <!-- regler message alerte / condition  -->
 
-        <div id="form-captcha">
-            <div id="form-captcha-input">
-                <label>Enter Captcha</label>
-                <input type="text" id="form-control" name="captcha" id="captcha">
-            </div>
-            <div id="form-captcha-jpg">
-                <label>Captcha Code</label>
-                <img src="createCaptcha.php" alt="PHP Captcha">
-            </div>
-        </div>
+                <div id="form-captcha">
+                    <div id="form-captcha-input">
+                        <!-- <label>Enter Captcha</label> -->
+                        <input type="text" id="form-control" name="captcha" id="captcha" placeholder="Insert Captcha">
+                    </div>
+                    <div id="form-captcha-jpg">
+                        <!-- <label>Captcha Code</label> -->
+                        <img src="createCaptcha.php" alt="PHP Captcha">
+                    </div>
+                </div>
 
 
-		<button type="submit" name="submit" id="form-submit">Envoyer</button>
-	</form>
+                <button type="submit" name="submit" id="form-submit">Send</button>
+            </form> 
     </div>
 </body>
 </html>
